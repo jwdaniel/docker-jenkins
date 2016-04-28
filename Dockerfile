@@ -2,7 +2,7 @@ FROM java:8-jdk
 
 RUN apt-get update && apt-get install -y git curl zip && rm -rf /var/lib/apt/lists/*
 
-RUN printf '#!/bin/bash\nexit 0\n' > /sbin/apparmor_parser &&
+RUN printf '#!/bin/bash\nexit 0\n' > /sbin/apparmor_parser && \
     chmod +x /sbin/apparmor_parser
 RUN curl -sSL https://get.docker.com/ | sh
 
